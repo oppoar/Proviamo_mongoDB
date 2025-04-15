@@ -31,7 +31,9 @@ cd backend
 
 node server.js
 
-cd ..
+
+
+cd mongoDbRepository
 
 ng serve
 ```
