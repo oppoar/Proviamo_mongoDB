@@ -22,12 +22,13 @@
                 <li class="list-group-item d-flex justify-content-between align-items-start">
                     {{ i + 1 }}
                     <div class="ms-2 me-auto d-flex">
-                        <div style="width: 50%;">
+                        <div>
                             <img [src]="imgUrlPrefix + img.path" alt="immagine" width="200" />
                         </div>
-                        <div style="width: 50%;">
-                            <div class="fw-bold">Name: {{ img.path }}</div>
-                            Peso: {{ formatFileSize(img.size) }}
+                        <div class="padding-left-30">
+                            <div class="fw-bold">Name: {{ img.name }}</div>
+                            <div>Peso: {{ formatFileSize(img.size) }}</div>
+                            <div>Estensione: {{ img.extension }}</div>
                         </div>
                     </div>
                     <span class="badge text-bg-primary rounded-pill">

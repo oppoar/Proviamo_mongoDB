@@ -3,6 +3,8 @@ const Schema = mongoose.Schema;
 
 const imageSchema = new Schema({
   path: { type: String, required: true },
+  name: {type: String, required: true },
+  extension: {type: String, required: true },
   size: { type: Number },        // peso in byte
   width: { type: Number },       // larghezza in pixel
   height: { type: Number },      // altezza in pixel

@@ -1,3 +1,5 @@
+//images.js
+
 const router = require('express').Router();
 const multer = require('multer');
 const sharp = require('sharp');
@@ -22,8 +24,12 @@ router.post('/add', upload.single('image'), async (req, res) => {
         // Leggi dimensioni con sharp
         const metadata = await sharp(filePath).metadata();
 
+        const extension = path.extname(req.file.originalname).toLowerCase(); // es: ".jpg"
+
         const newImage = new Image({
             path: req.file.filename,
+            name: req.file.originalname,
+            extension: extension,
             size: req.file.size,            // peso del file in byte
             width: metadata.width,
             height: metadata.height,
