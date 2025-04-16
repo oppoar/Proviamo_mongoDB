@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ApiPostsService } from './services/api-posts.service';
+import { ArmandoComponentComponent } from './components/armando-component/armando-component.component';
+import { FrankComponentComponent } from './components/frank-component/frank-component.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, ArmandoComponentComponent, FrankComponentComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
