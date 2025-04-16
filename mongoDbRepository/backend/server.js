@@ -1,16 +1,20 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-
 const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(cors());
-app.use(express.json()); // per leggere i body JSON
+app.use(express.json());
 
-// 👉 Poi le rotte
+// 👉 serve i file statici
+app.use('/uploads', express.static('uploads'));
+
+// 👉 routes
 const postsRouter = require('./routes/posts');
+const imagesRouter = require('./routes/images'); // 👈 aggiungi questa
 app.use('/posts', postsRouter);
+app.use('/images', imagesRouter); // 👈 aggiungi questa
 
 mongoose.connect('mongodb://localhost:27017', {
   useNewUrlParser: true,

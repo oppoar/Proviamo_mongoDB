@@ -1,5 +1,23 @@
-<div>
-    <h1>Frank - Post e get IMG</h1>
-    <button class="btn btn-primary" (click)="createPost()">Crea Post</button>
+<!-- <div>
+    <h1>Frank - Post e Get IMG</h1>
+    <button (click)="createPost()">Crea Post</button>
     <button (click)="getPosts()">Visualizza Posts</button>
 </div>
+ -->
+
+
+<h2>Carica un'immagine</h2>
+
+<input type="file" (change)="onFileSelected($event)" />
+<button (click)="uploadImage()">Carica</button>
+
+<hr />
+
+<h2>Immagini caricate:</h2>
+<div *ngIf="images.length === 0">Nessuna immagine disponibile.</div>
+<div *ngFor="let img of images">
+    <img [src]="imgUrlPrefix + img.path" alt="immagine" width="200" />
+    <p>Dimensioni: {{ img.width }} x {{ img.height }} px</p>
+    <p>Peso: {{ img.size }} byte</p>
+</div>
+
