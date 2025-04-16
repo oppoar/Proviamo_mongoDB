@@ -43,4 +43,4 @@ Thumbs.db
 
 # Backend
 /backend/node_modules
-/backend/uploads
+/backend/uploads/*
