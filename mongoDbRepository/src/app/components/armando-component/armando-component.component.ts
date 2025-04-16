@@ -58,6 +58,8 @@ export class ArmandoComponentComponent implements OnInit {
       }
     });
 
+    console.log(nuovaImg);
+
     this.nuovaImmagine = { img: '', size: 0 };
     this.tagInput = '';
   }
