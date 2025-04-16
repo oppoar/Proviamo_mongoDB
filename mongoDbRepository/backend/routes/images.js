@@ -32,6 +32,7 @@ router.post('/add', upload.single('image'), async (req, res) => {
         await newImage.save();
         res.json({ message: 'Image uploaded!', image: newImage });
     } catch (err) {
+        console.error('Errore nel backend:', err);  // 👈 AGGIUNGI QUESTO
         res.status(500).json({ error: 'Errore nel salvataggio immagine', details: err });
     }
 });
