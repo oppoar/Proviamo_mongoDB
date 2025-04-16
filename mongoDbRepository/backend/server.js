@@ -1,4 +1,4 @@
-//index.js
+//server.js
 
 const express = require('express');
 const mongoose = require('mongoose');
@@ -13,10 +13,8 @@ app.use(express.json());
 app.use('/uploads', express.static('uploads'));
 
 // 👉 routes
-const postsRouter = require('./routes/posts');
-const imagesRouter = require('./routes/images'); // 👈 aggiungi questa
-app.use('/posts', postsRouter);
-app.use('/images', imagesRouter); // 👈 aggiungi questa
+const imagesRouter = require('./routes/images');
+app.use('/images', imagesRouter);
 
 mongoose.connect('mongodb://localhost:27017', {
   useNewUrlParser: true,

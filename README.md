@@ -24,7 +24,8 @@ npm install
 ```
 
 
-## Avvio
+## Avvio - Vecchio Metodo
+
 
 ```
 cd backend
@@ -36,4 +37,16 @@ node server.js
 cd mongoDbRepository
 
 ng serve
+
 ```
+
+## Avvio - Nuovo Metodo
+
+
+```
+cd mongoDbRepository
+
+npm start
+
+```
+

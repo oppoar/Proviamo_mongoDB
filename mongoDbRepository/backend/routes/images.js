@@ -44,10 +44,16 @@ router.post('/add', upload.single('image'), async (req, res) => {
 });
 
 // 📤 GET /images
-router.get('/', (req, res) => {
-    Image.find()
-        .then(images => res.json(images))
-        .catch(err => res.status(400).json('Error: ' + err));
+router.get('/', async (req, res) => {
+    try {
+        let images = await Image.find();
+        res.json(images);
+    } catch (error) {
+        res.status(400).json('Error: ' + error)
+    }
+    // Image.find()
+    //     .then(images => res.json(images))
+    //     .catch(err => res.status(400).json('Error: ' + err));
 });
 
 module.exports = router;
