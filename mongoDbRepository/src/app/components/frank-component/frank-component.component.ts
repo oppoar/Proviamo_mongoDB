@@ -15,27 +15,39 @@ export class FrankComponentComponent implements OnInit {
   images: any[] = [];
   imgUrlPrefix: string = 'http://localhost:5000/uploads/';
 
-/*   postData = {
-    title: 'Esempio di titolo',
-    body: 'Esempio di contenuto'
-  };
- */
+  /*   postData = {
+      title: 'Esempio di titolo',
+      body: 'Esempio di contenuto'
+    };
+   */
 
   constructor(private apiImgPost: ApiPostsService) { }
+
+  /* 
+    createPost() {
+      this.apiImgPost.addPost(this.postData).subscribe(response => {
+        console.log('Post creato con successo:', response);
+      });
+    }
   
-/* 
-  createPost() {
-    this.apiImgPost.addPost(this.postData).subscribe(response => {
-      console.log('Post creato con successo:', response);
-    });
+    getPosts() {
+      this.apiImgPost.getPosts().subscribe(posts => {
+        console.log('Posts:', posts);
+      });
+    }
+   */
+
+
+  formatFileSize(bytes: number): string {
+    if (bytes >= 1024 * 1024) {
+      return (bytes / (1024 * 1024)).toFixed(2) + ' MB';
+    } else if (bytes >= 1024) {
+      return (bytes / 1024).toFixed(2) + ' KB';
+    } else {
+      return bytes + ' B';
+    }
   }
 
-  getPosts() {
-    this.apiImgPost.getPosts().subscribe(posts => {
-      console.log('Posts:', posts);
-    });
-  }
- */
 
   ngOnInit() {
     this.getImagesFromDb();
