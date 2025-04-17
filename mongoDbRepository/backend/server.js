@@ -15,10 +15,10 @@ app.use('/uploads', express.static('uploads'));
 // 👉 routes
 const postsRouter = require('./routes/posts');
 const imagesRouter = require('./routes/images'); // 👈 aggiungi questa
-const immagineRouter = require('./routes/immagine');
+const immagineRouter = require('./routes/immagini');
 app.use('/posts', postsRouter);
 app.use('/images', imagesRouter); // 👈 aggiungi questa
-app.use('/immagine', immagineRouter);
+app.use('/immagine', immaginiRouter);
 
 mongoose.connect('mongodb://localhost:27017', {
   useNewUrlParser: true,

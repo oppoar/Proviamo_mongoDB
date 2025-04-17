@@ -7,16 +7,16 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ImmagineService {
-  private apiUrl = 'http://localhost:5000';
+  private apiUrl = 'http://localhost:5000/immagini';
 
   constructor(private http: HttpClient) {}
 
   addImmagine(immagine: Immagine): Observable<Immagine> {
-    return this.http.post<Immagine>(`${this.apiUrl}/immagine/add`, immagine);
+    return this.http.post<Immagine>(`${this.apiUrl}/add`, immagine);
   }
   
   getAllImmagini(): Observable<Immagine[]> {
-    return this.http.get<Immagine[]>(this.apiUrl + "/immagine");
+    return this.http.get<Immagine[]>(this.apiUrl);
   }
   
 }
