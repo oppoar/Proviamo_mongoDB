@@ -1,10 +1,11 @@
 const mongoose = require('mongoose');
 
-const immaginiSchema = new mongoose.Schema({
+const immagineSchema = new mongoose.Schema({
   idImg: { type: Number, required: true },
   img: { type: String, required: true },
   size: { type: Number },
   tag: { type: Array }
 });
 
-module.exports = mongoose.model('Immagini', immaginiSchema, 'immagini');
+// Specifica il nome della collezione come 'immagini'
+module.exports = mongoose.model('Immagine', immagineSchema, 'immagini');
