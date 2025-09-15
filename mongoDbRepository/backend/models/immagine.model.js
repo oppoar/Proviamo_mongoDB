@@ -5,7 +5,10 @@ const immagineSchema = new mongoose.Schema({
   img: { type: String, required: true },
   size: { type: Number },
   tag: { type: Array }
+},
+{
+  collection: 'oppoImages' 
 });
 
 // Specifica il nome della collezione come 'immagini'
-module.exports = mongoose.model('Immagine', immagineSchema, 'immagini');
+module.exports = mongoose.model('Immagine', immagineSchema);
